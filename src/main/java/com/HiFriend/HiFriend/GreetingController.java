@@ -21,6 +21,8 @@ public class GreetingController {
 		int rand = new Random().nextInt(comidas.length);
 		String randomFood=comidas[rand];
 		String developer = "Josué Palomino";
+		String version ="Version Beta - 0.0.1";
+		model.addAttribute("version", version);
 		model.addAttribute("developer", developer);
 		model.addAttribute("randomFood", randomFood);
 		return "comida";
