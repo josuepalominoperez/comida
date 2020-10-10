@@ -16,7 +16,7 @@ public class GreetingController {
 			"Ceviche de pollo","Picante de carne","Ají de gallina","Causa","Cau cau",
 			"Escabeche de pollo","Seco de carne","Estofado","Caigua rellena","Olluquito"};
 	
-	@GetMapping("/food")
+	@GetMapping("/")
 	public String getRandomFood(Model model) {
 		int rand = new Random().nextInt(comidas.length);
 		String randomFood=comidas[rand];
@@ -26,21 +26,21 @@ public class GreetingController {
 
 	@GetMapping("/saluditope")
 	public String greeting() {
-		return "index";
+		return "indexz";
 	}
 	
 	@GetMapping("/losangeles")
 	public String greeting2() {
-		return "losangeles";
+		return "losangelesz";
 	}
 	
 	@GetMapping("/meniuprincipale")
 	public String greeting3() {
-		return "main";
+		return "mainz";
 	}
 
 	@GetMapping("/courses/fundamentos")
 	public String greeting4() {
-		return "fundamentos";
+		return "fundamentosz";
 	}
 }
