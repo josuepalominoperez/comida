@@ -43,7 +43,7 @@ public class GreetingController {
 	public String getMultipleFood(Model model) {
 		String delim = ",";
 		String developer = "Josué Palomino";
-		String version ="Version 1.0.0";
+		String version ="Version 1.0.2";
 		String res7 = String.join(delim, pickNRandom(teamList1, 7));
 		model.addAttribute("res7", res7);
 		model.addAttribute("version", version);
