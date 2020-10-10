@@ -1,5 +1,9 @@
 package com.HiFriend.HiFriend;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.stereotype.Controller;
@@ -11,23 +15,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class GreetingController {
 	
 	
-	private String comidas[]={"Arroz chaufa", "Brócoli", "Pollo al horno", "Ensalada rusa", "Lentejitas" , 
+	private List<String> teamList1 = Arrays.asList("Arroz chaufa", "Brócoli", "Pollo al horno", "Ensalada rusa", "Lentejitas" , 
 			"Pollo a la naranja","Tallarin rojo","Tallarin verde","Lomo saltado",
-			"Ceviche de pollo","Picante de carne","Ají de gallina","Causa","Cau cau",
-			"Escabeche de pollo","Seco de carne","Estofado","Caigua rellena","Olluquito"};
+				"Ceviche de pollo","Picante de carne","Ají de gallina","Causa","Cau cau",
+				"Escabeche de pollo","Seco de carne","Estofado","Caigua rellena","Olluquito");
+	
+	public static List<String> pickNRandom(List<String> lst, int n) {
+	    List<String> copy = new LinkedList<String>(lst);
+	    Collections.shuffle(copy);
+	    return copy.subList(0, n);
+	}
 	
 	@GetMapping("/")
-	public String getRandomFood(Model model) {
-		int rand = new Random().nextInt(comidas.length);
-		String randomFood=comidas[rand];
+	public String getSingleFood(Model model) {
+		String delim = ",";
 		String developer = "Josué Palomino";
-		String version ="Version Beta - 0.0.1";
+		String version ="Version 1.0.0";
+		String res1 = String.join(delim, pickNRandom(teamList1, 1));
+		model.addAttribute("res1", res1);
 		model.addAttribute("version", version);
 		model.addAttribute("developer", developer);
-		model.addAttribute("randomFood", randomFood);
 		return "comida";
 	}
 
+	
+	@GetMapping("/mommy")
+	public String getMultipleFood(Model model) {
+		String delim = ",";
+		String developer = "Josué Palomino";
+		String version ="Version 1.0.0";
+		String res7 = String.join(delim, pickNRandom(teamList1, 7));
+		model.addAttribute("res7", res7);
+		model.addAttribute("version", version);
+		model.addAttribute("developer", developer);
+		return "comida2";
+	}
+	
+	
 	@GetMapping("/saluditope")
 	public String greeting() {
 		return "indexz";
