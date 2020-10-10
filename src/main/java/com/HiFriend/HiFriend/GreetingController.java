@@ -30,7 +30,7 @@ public class GreetingController {
 	public String getSingleFood(Model model) {
 		String delim = ",";
 		String developer = "Josué Palomino";
-		String version ="Version 1.0.0";
+		String version ="Version 1.0.2";
 		String res1 = String.join(delim, pickNRandom(teamList1, 1));
 		model.addAttribute("res1", res1);
 		model.addAttribute("version", version);
