@@ -54,7 +54,7 @@ public class GreetingController {
 		return "comida2";
 	}
 	
-	@GetMapping("/pregunta")
+	@GetMapping("/hora")
 	public String preguntar(Model model) {
 		return "dato";
 	}
