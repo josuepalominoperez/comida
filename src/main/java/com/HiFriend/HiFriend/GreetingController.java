@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,6 +54,10 @@ public class GreetingController {
 		return "comida2";
 	}
 	
+	@GetMapping("/pregunta")
+	public String preguntar(Model model) {
+		return "dato";
+	}
 	
 	@GetMapping("/saluditope")
 	public String greeting() {
