@@ -20,6 +20,14 @@
   alert("¿Porqué no? :(  si yo te amo mucho");
   }
 </script>
+<script>
+var myVar = setInterval(myTimer, 1000);
 
+function myTimer() {
+  var d = new Date();
+  document.getElementById("demo").innerHTML ="Son las " + d.toLocaleTimeString();
+}
+</script>
+<p id="demo"></p>
 </body>
 </html>
