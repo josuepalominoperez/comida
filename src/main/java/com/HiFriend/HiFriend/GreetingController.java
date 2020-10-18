@@ -12,7 +12,9 @@ import javax.swing.JOptionPane;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GreetingController {
@@ -53,6 +55,20 @@ public class GreetingController {
 		model.addAttribute("developer", developer);
 		return "comida2";
 	}
+	
+	@GetMapping("/crear")
+	public String crear() {
+		return "crear";
+	}
+	
+	@PostMapping("/guardar")
+	public String guardar(@RequestParam("nombre") String nombre , @RequestParam("descripcion") String descripcion , Model model) {
+		model.addAttribute("nombre", nombre);	
+		model.addAttribute("descripcion", descripcion);
+		return "guardar";
+	}
+	
+	
 	
 	@GetMapping("/hora")
 	public String preguntar(Model model) {
