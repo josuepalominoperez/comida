@@ -61,6 +61,11 @@ public class GreetingController {
 		return "crear";
 	}
 	
+	@GetMapping("/notepad")
+	public String crearNotepad() {
+		return "notepad";
+	}
+	
 	@PostMapping("/guardar")
 	public String guardar(@RequestParam("nombre") String nombre , @RequestParam("descripcion") String descripcion , Model model) {
 		model.addAttribute("nombre", nombre);	
