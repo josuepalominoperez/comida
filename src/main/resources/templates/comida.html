@@ -11,6 +11,7 @@
 <title>Selector de comida</title>
 </head>
 <body>
+<div th:text="${horario}"></div>
 <h1>Click <button onclick="window.location.href='/';" type="button" class="btn btn-success">AQUÍ</button> para obtener el menú del día</h1>
 <h1 th:text="'El menú para hoy es: ' + ${res1}"></h1>
 <p th:text="'Desarrollador: ' + ${developer}"></p>

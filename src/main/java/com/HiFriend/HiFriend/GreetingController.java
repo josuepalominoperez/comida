@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GreetingController {
+	
+	@Value("${config.horario.apertura}")
+	private Integer apertura;
+	
+	@Value("${config.horario.cierre}")
+	private Integer cierre;
 	
 	
 	private List<String> teamList1 = Arrays.asList("Arroz chaufa", "Brócoli", "Pollo al horno", "Ensalada rusa", "Lentejitas" , 
@@ -98,5 +105,18 @@ public class GreetingController {
 	@GetMapping("/courses/fundamentos")
 	public String greeting4() {
 		return "fundamentosz";
+	}
+	
+	@GetMapping("/cerrado")
+	public String cerrado(Model model) {
+		
+		StringBuilder mensaje = new StringBuilder("Cerrado, por favor visita la página desde las ");
+		mensaje.append(apertura);
+		mensaje.append(" hasta las ");
+		mensaje.append(cierre);
+		mensaje.append(" hrs. Gracias.");
+		model.addAttribute("titulo", "Fuera del horario de atención");
+		model.addAttribute("mensaje", mensaje);
+		return "cerrado";
 	}
 }
