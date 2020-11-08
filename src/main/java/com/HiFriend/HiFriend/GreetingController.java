@@ -1,7 +1,9 @@
 package com.HiFriend.HiFriend;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -44,9 +46,13 @@ public class GreetingController {
 		String developer = "Josué Palomino";
 		String version ="Version 1.0.2";
 		String res1 = String.join(delim, pickNRandom(teamList1, 1));
+		Date d1 = new Date();
+		SimpleDateFormat df = new SimpleDateFormat("dd/mm/YYYY HH:mm:ss");
+		String formattedDate = df.format(d1);
 		model.addAttribute("res1", res1);
 		model.addAttribute("version", version);
 		model.addAttribute("developer", developer);
+		model.addAttribute("horaserver", formattedDate);
 		return "comida";
 	}
 
