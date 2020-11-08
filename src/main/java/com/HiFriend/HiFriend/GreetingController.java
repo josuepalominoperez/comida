@@ -40,6 +40,19 @@ public class GreetingController {
 	    return copy.subList(0, n);
 	}
 	
+	@GetMapping("/indexmommy")
+	public String inicio(Model model) {
+		//aqui se visualizará la url localhost/indexmommy pero internamente está yendo a localhost/mommy
+		return "forward:/mommy";
+	}
+	
+	
+	@GetMapping("/indexmommy2")
+	public String inicio2(Model model) {
+		//Aquí hace un redirect a mommy page
+		return "redirect:/mommy";
+	}
+	
 	@GetMapping("/")
 	public String getSingleFood(Model model) {
 		String delim = ",";
