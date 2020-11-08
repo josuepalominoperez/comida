@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -137,5 +138,14 @@ public class GreetingController {
 		model.addAttribute("titulo", "Fuera del horario de atención");
 		model.addAttribute("mensaje", mensaje);
 		return "cerrado";
+	}
+	
+	
+	@GetMapping("/pathvariable/{texto}/{numero}")
+    public String variables(@PathVariable String texto, @PathVariable Integer numero, Model model) {
+		model.addAttribute("titulo", "Recibir parámetros de la ruta (@PathVariable)");
+		model.addAttribute("resultado", "El texto enviado en la ruta es: " + texto
+				+ " y el número enviado en el path es: " + numero);
+		return "pathvariable";
 	}
 }
