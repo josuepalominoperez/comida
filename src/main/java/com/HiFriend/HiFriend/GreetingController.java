@@ -148,4 +148,9 @@ public class GreetingController {
 				+ " y el número enviado en el path es: " + numero);
 		return "pathvariable";
 	}
+	
+	@GetMapping("/invitacion")
+	public String invitacion() {
+		return "invitacion";
+	}
 }
