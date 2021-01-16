@@ -1,5 +1,6 @@
 package com.HiFriend.HiFriend;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
@@ -162,5 +163,57 @@ public class GreetingController {
     vacante.setSalario(350.20);
     model.addAttribute("vacante", vacante);
     return "detalle";
+    }
+
+    @GetMapping("/tabla")
+    public String mostrarTabla(Model model){
+        List<Vacante> lista = getVacantes();
+        model.addAttribute("vacantes", lista);
+        return "tabla";
+    }
+
+
+    public List<Vacante> getVacantes(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
+        List<Vacante> lista = new LinkedList<>();
+        try {
+            Vacante vacante1= new Vacante();
+            vacante1.setId(1);
+            vacante1.setNombre("Josue");
+            vacante1.setDescripcion("Realizando seteo de atributos desde Controller usando clase + 'Vacante' ");
+            vacante1.setFecha(sdf.parse("16-01-2021"));
+            vacante1.setSalario(350.20); 
+
+            Vacante vacante2= new Vacante();
+            vacante2.setId(2);
+            vacante2.setNombre("Valeria");
+            vacante2.setDescripcion("La jovencita más linda");
+            vacante2.setFecha(sdf.parse("15-01-2021"));
+            vacante2.setSalario(351.20); 
+
+            Vacante vacante3= new Vacante();
+            vacante3.setId(3);
+            vacante3.setNombre("Aracelly");
+            vacante3.setDescripcion("La hermana que siempre quise XD");
+            vacante3.setFecha(sdf.parse("20-01-2021"));
+            vacante3.setSalario(352.20); 
+
+            Vacante vacante4= new Vacante();
+            vacante4.setId(2);
+            vacante4.setNombre("Renzo");
+            vacante4.setDescripcion("Crack en programacion");
+            vacante4.setFecha(sdf.parse("21-01-2021"));
+            vacante4.setSalario(353.20); 
+
+            lista.add(vacante1);
+            lista.add(vacante2);
+            lista.add(vacante3);
+            lista.add(vacante4);
+
+        } catch (ParseException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+
+        return lista;
     }
 }

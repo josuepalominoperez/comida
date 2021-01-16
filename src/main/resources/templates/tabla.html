@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<title>Tabla con data</title>
+</head>
+<body>
+<script>
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+  var d = new Date();
+  document.getElementById("demo").innerHTML ="La hora es " + d.toLocaleTimeString();
+}
+</script>
+<p id="demo" style="text-align:center;"></p>
+
+<table class="table table-success table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Fecha de Publicacion</th>
+    <th>Salario Ofrecido</th>
+    <th>Descripcion</th>
+  </tr>
+  <tr th:each="vacante : ${vacantes}">
+    <td th:text="${vacante.id}"></td>
+    <td th:text="${vacante.nombre}"></td>
+    <td th:text="${vacante.fecha}"></td>
+    <td th:text="${vacante.salario}"></td>
+    <td th:text="${vacante.descripcion}"></td>
+  </tr>
+  
+</table>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+</body>
+</html>
