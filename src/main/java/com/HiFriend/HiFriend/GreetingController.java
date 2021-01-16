@@ -182,7 +182,8 @@ public class GreetingController {
             vacante1.setNombre("Josue");
             vacante1.setDescripcion("Realizando seteo de atributos desde Controller usando clase + 'Vacante' ");
             vacante1.setFecha(sdf.parse("16-01-2021"));
-            vacante1.setSalario(350.20); 
+            vacante1.setSalario(350.20);
+            vacante1.setDestacado(1); 
 
             Vacante vacante2= new Vacante();
             vacante2.setId(2);
@@ -190,13 +191,15 @@ public class GreetingController {
             vacante2.setDescripcion("La jovencita más linda");
             vacante2.setFecha(sdf.parse("15-01-2021"));
             vacante2.setSalario(351.20); 
+            vacante2.setDestacado(1);
 
             Vacante vacante3= new Vacante();
             vacante3.setId(3);
             vacante3.setNombre("Aracelly");
             vacante3.setDescripcion("La hermana que siempre quise XD");
             vacante3.setFecha(sdf.parse("20-01-2021"));
-            vacante3.setSalario(352.20); 
+            vacante3.setSalario(352.20);
+            vacante3.setDestacado(0); 
 
             Vacante vacante4= new Vacante();
             vacante4.setId(2);
@@ -204,6 +207,7 @@ public class GreetingController {
             vacante4.setDescripcion("Crack en programacion");
             vacante4.setFecha(sdf.parse("21-01-2021"));
             vacante4.setSalario(353.20); 
+            vacante4.setDestacado(0);
 
             lista.add(vacante1);
             lista.add(vacante2);
