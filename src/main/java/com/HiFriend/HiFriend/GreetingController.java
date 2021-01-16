@@ -16,10 +16,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+//import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+//@RequestMapping(value = "/categorias")
+//Si usamos este RequestMapping para la clase quedaria asi : localhost:8080/categorias/AnyURL
 public class GreetingController {
 	
 	@Value("${config.horario.apertura}")
@@ -29,10 +31,18 @@ public class GreetingController {
 	private Integer cierre;
 	
 	
-	private List<String> teamList1 = Arrays.asList("Arroz chaufa", "Brócoli", "Pollo al horno", "Ensalada rusa", "Lentejitas" , 
-			"Pollo a la naranja","Tallarin rojo","Tallarin verde","Lomo saltado",
-				"Ceviche de pollo","Picante de carne","Ají de gallina","Causa","Cau cau",
-				"Escabeche de pollo","Seco de carne","Estofado","Caigua rellena","Olluquito");
+    private List<String> teamList1 = Arrays.asList("Arroz chaufa","Ají de gallina","Arverja verde partida",
+     "Brócoli",
+     "Carapulcra","Ceviche de pollo","Causa","Cau cau","Caigua rellena","Chanfainita",
+     "Escabeche de pollo", "Ensalada rusa","Estofado","Ensalada mixta",
+     "Lentejitas","Lomo saltado","Locro",
+     "Mondonguito a la italiana",
+     "Olluquito",
+     "Papa rellena","Pallares con saltado de pollo","Pollo al horno", "Pollo a la naranja","Picante de carne","Pure",
+     "Quinua",
+     "Seco de carne",
+     "Tallarin rojo","Tallarin verde","Tallarinn saltado"
+	 );
 	
 	public static List<String> pickNRandom(List<String> lst, int n) {
 	    List<String> copy = new LinkedList<String>(lst);
