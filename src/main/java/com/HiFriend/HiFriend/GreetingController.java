@@ -7,8 +7,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-
-
+import com.HiFriend.model.Vacante;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -151,5 +150,17 @@ public class GreetingController {
 	@GetMapping("/invitacion")
 	public String invitacion() {
 		return "invitacion";
-	}
+    }
+    
+    @GetMapping("/detalle")
+    public String detalle(Model model){
+    Vacante vacante= new Vacante();
+    vacante.setId(1);
+    vacante.setNombre("Josue");
+    vacante.setDescripcion("Realizando seteo de atributos desde Controller usando clase + 'Vacante' ");
+    vacante.setFecha(new Date());
+    vacante.setSalario(350.20);
+    model.addAttribute("vacante", vacante);
+    return "detalle";
+    }
 }
