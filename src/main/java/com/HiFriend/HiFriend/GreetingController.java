@@ -79,6 +79,21 @@ public class GreetingController {
 		return "comida";
 	}
 
+    @GetMapping("/comida3")
+	public String getSingleFood2(Model model) {
+		String delim = ",";
+		String developer = "Josué Palomino";
+		String version ="Version 1.0.2";
+		String res1 = String.join(delim, pickNRandom(teamList1, 1));
+		Date d1 = new Date();
+		SimpleDateFormat df = new SimpleDateFormat("dd/mm/YYYY HH:mm:ss");
+		String formattedDate = df.format(d1);
+		model.addAttribute("res1", res1);
+		model.addAttribute("version", version);
+		model.addAttribute("developer", developer);
+		model.addAttribute("horaserver", formattedDate);
+		return "comida3";
+	}
 	
 	@GetMapping("/mommy")
 	public String getMultipleFood(Model model) {
