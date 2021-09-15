@@ -3,7 +3,7 @@ package com.HiFriend.model;
 import java.util.Date;
 
 public class Vacante {
-    
+ //Comentando linea
     private Integer id;
     private String nombre;
     private String descripcion;
