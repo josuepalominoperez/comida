@@ -10,7 +10,7 @@ public class Vacante {
     private Date fecha;
     private Double salario;
     private Integer destacado;
-
+//new line commented
     public Integer getId() {
         return id;
     }
