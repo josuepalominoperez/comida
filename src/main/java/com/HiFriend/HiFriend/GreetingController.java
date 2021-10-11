@@ -212,8 +212,8 @@ public class GreetingController {
 
             Vacante vacante2= new Vacante();
             vacante2.setId(2);
-            vacante2.setNombre("Valeria");
-            vacante2.setDescripcion("La jovencita más linda");
+            vacante2.setNombre("Sech");
+            vacante2.setDescripcion("y el Pepe");
             vacante2.setFecha(sdf.parse("15-01-2021"));
             vacante2.setSalario(351.20); 
             vacante2.setDestacado(1);
