@@ -138,17 +138,17 @@ public class GreetingController {
 	
 	@GetMapping("/losangeles")
 	public String greeting2() {
-		return "losangelesz";
+		return "losangeles";
 	}
 	
 	@GetMapping("/meniuprincipale")
 	public String greeting3() {
-		return "mainz";
+		return "main";
 	}
 
 	@GetMapping("/courses/fundamentos")
 	public String greeting4() {
-		return "fundamentosz";
+		return "fundamentos";
 	}
 	
 	@GetMapping("/cerrado")
