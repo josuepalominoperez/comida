@@ -118,7 +118,7 @@ public class GreetingController {
 	}
 	
 	@PostMapping("/valentineday")
-	public String guardar(@RequestParam("nombre") String nombre , @RequestParam("descripcion") String descripcion , Model model) {
+	public String valentineday(@RequestParam("nombre") String nombre , @RequestParam("descripcion") String descripcion , Model model) {
 		model.addAttribute("nombre", nombre);	
 		model.addAttribute("descripcion", descripcion);
 		return "valentineday";
