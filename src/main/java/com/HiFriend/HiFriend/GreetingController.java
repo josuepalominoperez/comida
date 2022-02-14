@@ -117,7 +117,7 @@ public class GreetingController {
 		return "notepad";
 	}
 	
-	@PostMapping("/meamaonomeama")
+	@PostMapping("/valentineday")
 	public String guardar(@RequestParam("nombre") String nombre , @RequestParam("descripcion") String descripcion , Model model) {
 		model.addAttribute("nombre", nombre);	
 		model.addAttribute("descripcion", descripcion);
