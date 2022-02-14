@@ -125,7 +125,7 @@ public class GreetingController {
 	
 	
 	
-	@GetMapping("/hora")
+	@GetMapping("/secretmessage")
 	public String preguntar(Model model) {
 		return "dato";
 	}
