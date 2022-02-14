@@ -107,7 +107,7 @@ public class GreetingController {
 		return "comida2";
 	}
 	
-	@GetMapping("/crear")
+	@GetMapping("/valentineday")
 	public String crear() {
 		return "crear";
 	}
