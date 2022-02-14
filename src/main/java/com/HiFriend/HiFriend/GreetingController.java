@@ -117,11 +117,11 @@ public class GreetingController {
 		return "notepad";
 	}
 	
-	@RequestMapping("/valentineday")
-	public String valentineday(@RequestParam("nombre") String nombre , @RequestParam("descripcion") String descripcion , Model model) {
+	@PostMapping("/guardar")
+	public String guardar(@RequestParam("nombre") String nombre , @RequestParam("descripcion") String descripcion , Model model) {
 		model.addAttribute("nombre", nombre);	
 		model.addAttribute("descripcion", descripcion);
-		return "valentineday";
+		return "guardar";
 	}
 	
 	
