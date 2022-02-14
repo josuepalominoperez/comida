@@ -118,9 +118,8 @@ public class GreetingController {
 	}
 	
 	@PostMapping("/guardar")
-	public String guardar(@RequestParam("nombre") String nombre , @RequestParam("descripcion") String descripcion , Model model) {
+	public String guardar(@RequestParam("nombre") String nombre , Model model) {
 		model.addAttribute("nombre", nombre);	
-		model.addAttribute("descripcion", descripcion);
 		return "guardar";
 	}
 	
