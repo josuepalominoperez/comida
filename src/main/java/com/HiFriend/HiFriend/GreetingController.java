@@ -63,7 +63,9 @@ public class GreetingController {
 		return "redirect:/mommy";
 	}
 	
-	@GetMapping("/")
+	//Estamos agregando la palabra index en este GetMapping solo para que se me muestre en Githubpages super rapido
+	//La pagina buscará segun el return , en este caso buscara el index.html que inicialmente era comida.html
+	@GetMapping("/index")
 	public String getSingleFood(Model model) {
 		String delim = ",";
 		String developer = "Josué Palomino";
@@ -76,7 +78,7 @@ public class GreetingController {
 		model.addAttribute("version", version);
 		model.addAttribute("developer", developer);
 		model.addAttribute("horaserver", formattedDate);
-		return "comida";
+		return "index";
 	}
 
     @GetMapping("/comida3")
